@@ -1,4 +1,10 @@
-
+/**
+ *
+ * Spoorthi Gowda
+ * Homework 7 - problem 2 
+ *
+ *
+ */
 import static org.junit.Assert.assertEquals;
 import java.util.Random;
 import org.junit.Test;
@@ -6,40 +12,33 @@ import org.junit.Test;
 public class MaxHeapTest {
 	
 	@Test
-	public void MaxHeapLogN() {
+	public void MaxHeapLogNTest() {
         // homework
-		System.out.println("In MaxHeapLogN =====>");
-		Integer[] arr = new Integer[10000];
-		Random r = new Random();
+		System.out.println("In MaxHeapLogNTest =====>");
+		Integer [] arr = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
 		
-		for (int i = 0; i < 10000; i++) {
-			
-			arr[i] = r.nextInt((10000 - 1) + 1) + 1;
-		}
-		
-		MaxHeap mh = new MaxHeap(10000);
-		System.out.println(System.currentTimeMillis());
+		MaxHeap mh = new MaxHeap(arr.length);
 		mh.MaxHeapLogN(arr);
-		System.out.println(System.currentTimeMillis());
+		 for (int i = 0; i < mh.data.length; i++) {
+	        	System.out.println(mh.data[i]);
+			}
+		assertEquals(new Integer[] {17, 15, 13, 9, 8, 10, 3, 6, 1, 5, 4}, mh.data);
     }
 	
 	@Test
-    public void MaxHeapN() {
+	public void MaxHeapNTest() {
         // homework
-		System.out.println("In MaxHeapN =====>");
-		Integer[] arr = new Integer[10000];
-		Random r = new Random();
+		System.out.println("In MaxHeapNTest =====>");
+		Integer [] arr = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
 		
-		for (int i = 0; i < 10000; i++) {
-			
-			arr[i] = r.nextInt((10000 - 1) + 1) + 1;
-		}
-		
-		MaxHeap mh = new MaxHeap(10000);
-		System.out.println(System.currentTimeMillis());
+		MaxHeap mh = new MaxHeap(arr.length);
 		mh.MaxHeapN(arr);
-		System.out.println(System.currentTimeMillis());
+		 for (int i = 0; i < mh.data.length; i++) {
+	        	System.out.println(mh.data[i]);
+			}
+		assertEquals(new Integer[] {17, 15, 13, 9, 6, 5, 10, 4, 8, 3, 1}, mh.data);
     }
+	
 	
 	@Test
     public void addItemTests() {
